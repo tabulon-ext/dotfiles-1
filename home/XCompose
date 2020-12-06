@@ -4,6 +4,11 @@ include "%L"
 <Multi_key> <p> <i> <z> <z> <a> : "🍕"
 <Multi_key> <h> <m> <m> : "🤔"
 <Multi_key> <plus> <1> : "👍"
+<Multi_key> <y> <e> <s> : "👍"
 <Multi_key> <s> <h> <r> <u> <g> : "🤷"
+<Multi_key> <n> <e> <r> <d> : "🤓"
+<Multi_key> <t> <e> <e> <t> <h> : "😬"
+<Multi_key> <m> <o> <n> <o> <c> <l> <e> : "🧐"
+<Multi_key> <e> <y> <e> <b> <r> <o> <w> : "🤨"
 
 # vim: ft=conf
