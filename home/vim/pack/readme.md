@@ -16,11 +16,6 @@
     almost 1000), but EasyAlign tends to automagically do the *right thing* in many common
     cases (like ignoring comments).  Also see [this reddit post](https://redd.it/2lsr8d)
     about EasyAlign.
-*   I'm using [Grip][] to preview Markdown files.  It lets GitHub do the rendering.  The
-    best Vim plugin might be [vim-instant-markdown][].  [vim-markdown-preview][] is
-    somewhat buggy.  [vim-preview][] doesn't seem to do GitHub Flavored Markdown (it uses
-    the redcarpet Gem).  There's also the [github-markdown-preview][] Gem and several
-    Chromium extensions that render Markdown.  See <https://stackoverflow.com/q/9212340>.
 *   [vim-sleuth][] automatically adjusts 'shiftwidth' and 'expandtab' heuristically.
 
 # TODO
@@ -38,7 +33,6 @@
 [EasyAlign]: https://github.com/junegunn/vim-easy-align
 [Tabular]: https://github.com/godlygeek/tabular
 [Lion.vim]: https://github.com/tommcdo/vim-lion
-[Grip]: https://github.com/joeyespo/grip
 [vim-instant-markdown]: https://github.com/suan/vim-instant-markdown
 [vim-markdown-preview]: https://github.com/JamshedVesuna/vim-markdown-preview
 [vim-preview]: https://github.com/greyblake/vim-preview

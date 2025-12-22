@@ -30,5 +30,3 @@ set enable-bracketed-paste on
 # Control+N to only bring up history items that match the already typed characters.
 Control-P: history-search-backward
 Control-N: history-search-forward
-
-Control-O: "~/dotfiles/"

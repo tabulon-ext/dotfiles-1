@@ -208,6 +208,9 @@ __fzf_oneliners__() {
 # in /usr/share/fzf/key-bindings.bash to set up the Control+R readline key binding.
 bind '"ÿ": " \C-e\C-u$(__fzf_oneliners__)\e\C-e\e^\er"'
 
+bind '\C-o: "~/dotfiles/"'
+bind '"\et": "tig\n"'
+
 # Aliases for humans.
 alias df='df -h'
 alias du='du -h'
