@@ -111,6 +111,8 @@ let mapleader = ' '
 " Make sure <Space> doesn't do anything by itself.
 map <Space> <Nop>
 
+nnoremap 0 ^
+
 " Use Unix-style line endings for new buffers and files on Windows too.
 if has('win32')
    set fileformat=unix
@@ -434,15 +436,6 @@ if has('multi_byte') | :set fillchars+=vert:│ | endif
 command! -nargs=1 -complete=help H :enew | :set buftype=help | :h <args>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Molokai sets 'background' to light for some reason.  The issue has been reported here:
-" <https://github.com/tomasr/molokai/issues/22>.
-autocmd vimrc_common ColorScheme * if exists('g:colors_name') &&
-   \ (g:colors_name ==# 'molokai' || g:colors_name ==# 'jellybeans') |
-   \ noa set bg=dark | endif
-
-" Use a darker background with the lucius color scheme.
-let g:lucius_contrast_bg = 'high'
-
 " For C++ and C: don't highlight {}; inside [] and () as errors.
 let c_no_curly_error = 1
 
@@ -599,16 +592,14 @@ endif
 nnoremap <C-G> <Cmd>call <SID>CycleHorizontally()<CR>
 
 function! s:CycleHorizontally()
-   if winnr('$') == 1
-      return
-   elseif v:count > 0
+   if v:count > 0
       execute 'normal!' v:count .. "\<C-W>w\<C-W>_"
-   elseif win_screenpos(winnr('#'))[1] != win_screenpos(0)[1]
-      wincmd p
    elseif win_screenpos(winnr('$'))[1] == 1
       return
+   elseif win_screenpos(winnr('#'))[1] != win_screenpos(0)[1]
+      wincmd p
    elseif winnr() == winnr('l')
-      while winnr() != winnr('h') | wincmd h | endwhile
+      wincmd h
    else
       wincmd l
    endif
