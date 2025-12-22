@@ -16,15 +16,6 @@
     almost 1000), but EasyAlign tends to automagically do the *right thing* in many common
     cases (like ignoring comments).  Also see [this reddit post](https://redd.it/2lsr8d)
     about EasyAlign.
-*   The [vim-slime](https://github.com/jpalardy/vim-slime) plugin enables sending the
-    current paragraph to a REPL with `<C-C><C-C>`.
-    *   Haskell code is [adapted][1] to the syntax GHCi expects.
-    *   I think all of these plugins are similar:
-        *   [vim-quickrun](https://github.com/thinca/vim-quickrun)
-        *   [slimv](https://github.com/kovisoft/slimv)
-        *   [slimux](https://github.com/epeli/slimux)
-        *   [neoterm](https://github.com/kassio/neoterm) (for Neovim only)
-    *   Also see [this discussion](https://redd.it/4o97kn).
 *   I'm using [Grip][] to preview Markdown files.  It lets GitHub do the rendering.  The
     best Vim plugin might be [vim-instant-markdown][].  [vim-markdown-preview][] is
     somewhat buggy.  [vim-preview][] doesn't seem to do GitHub Flavored Markdown (it uses
@@ -47,7 +38,6 @@
 [EasyAlign]: https://github.com/junegunn/vim-easy-align
 [Tabular]: https://github.com/godlygeek/tabular
 [Lion.vim]: https://github.com/tommcdo/vim-lion
-[1]: https://github.com/jpalardy/vim-slime/tree/master/ftplugin/haskell
 [Grip]: https://github.com/joeyespo/grip
 [vim-instant-markdown]: https://github.com/suan/vim-instant-markdown
 [vim-markdown-preview]: https://github.com/JamshedVesuna/vim-markdown-preview

@@ -208,9 +208,6 @@
 [submodule "home/vim/pack/meribold/opt/vim-dict"]
 	path = home/vim/pack/various-artists/opt/vim-dict
 	url = https://github.com/szw/vim-dict.git
-[submodule "home/vim/pack/meribold/start/vim-slime"]
-	path = home/vim/pack/various-artists/start/vim-slime
-	url = https://github.com/jpalardy/vim-slime.git
 [submodule "home/vim/pack/meribold/opt/vim-gutentags"]
 	path = home/vim/pack/various-artists/opt/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
