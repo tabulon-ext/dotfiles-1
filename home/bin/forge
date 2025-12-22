@@ -20,7 +20,7 @@ if [[ -v d && -d $d ]]; then
 fi
 
 mkdir -p ~/tmp/forge || exit
-until d=~/tmp/forge/$(qualified-noun) && mkdir "$d"; do :; done
+until d=~/tmp/forge/$(qn) && mkdir "$d"; do :; done
 
 cat > "$d/main.cpp" <<'EOF'
 #include <iostream>

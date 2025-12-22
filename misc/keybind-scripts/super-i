@@ -20,7 +20,7 @@ EOF
 
 if [[ $d == \$latent_dir ]]; then
    cd ~/tmp || { mkdir ~/tmp && cd ~/tmp; } || exit
-   d=$(qualified-noun) && mkdir "$d" || { d=$(qualified-noun) && mkdir "$d"; } || exit
+   d=$(qn) && mkdir "$d" || { d=$(qn) && mkdir "$d"; } || exit
    cd "$d" || exit
 elif [[ $d == \$latent_git_repo ]]; then
    instagit || exit

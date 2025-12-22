@@ -34,6 +34,7 @@ adjectives=(
    recurring sincere eldritch sinister discerning archaic trivial extra ominous ambitious
    sardonic turbo absurd cathartic scrambled bizarre centered chipped static limitless
    spurious cardinal devious harmonic stateless wireless sufficient recursive necessary
+   pernicious contingency meta reference eclectic scuffed idiosyncratic
 )
 
 nouns=(
@@ -46,7 +47,7 @@ nouns=(
    panda turtle penguin snowman salt plum kobold gremlin corgi lobster flea frisbee
    boomerang molehill hamster towel goat toothpaste cheese snake jam ostrich deity
    porcupine eel cherry paladin pizza spaghetti loaf knob waffle fiend pudding mimic
-   quasit nargle toad frog coaster teapot
+   quasit nargle toad frog coaster teapot squirrel
 )
 
 ai=$((RANDOM % ${#adjectives[@]}))

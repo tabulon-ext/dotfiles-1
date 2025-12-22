@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 while :; do
+   date
    rsync --human-readable --archive --compress --hard-links --acls --xattrs \
       --one-file-system -M--fake-super --delete --exclude='/dev/*' --exclude='/proc/*' \
       --exclude='/sys/*' --exclude='/tmp/*' --exclude='/run/*' --exclude='/mnt/*' \
@@ -10,3 +11,5 @@ while :; do
       / esgaroth:smial/ && break
    sleep 30
 done
+
+date

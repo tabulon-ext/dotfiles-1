@@ -183,13 +183,13 @@ filch() {
 
 # `catch` is a portmanteau of `cat` and `which`.
 catch() {
-   path=$(which "$1") && [[ $(file -L "$path") == *text* ]] && bat "$path"
+   path=$(which "$1") && [[ $(file -L "$path") == *text* ]] && cat "$path"
 }
 
 instagit() {
    cd ~/tmp || { mkdir ~/tmp && cd ~/tmp; } || return
    local d
-   d=$(qualified-noun) && mkdir "$d" || { d=$(qualified-noun) && mkdir "$d"; } || return
+   d=$(qn) && mkdir "$d" || { d=$(qn) && mkdir "$d"; } || return
    cd "$d" && git init --quiet
 }
 
@@ -277,8 +277,6 @@ alias feh='feh -.Zg 1440x1080 -B black '
 alias msa='mpc search any'
 
 alias man='LC_CTYPE=en_US luit man -E latin1'
-
-alias qn='qualified-noun'
 
 d() { dict "$@" |& less -FX; }
 
