@@ -596,7 +596,7 @@ function! s:CycleHorizontally()
       execute 'normal!' v:count .. "\<C-W>w\<C-W>_"
    elseif win_screenpos(winnr('$'))[1] == 1
       return
-   elseif win_screenpos(winnr('#'))[1] != win_screenpos(0)[1]
+   elseif win_screenpos(winnr('#'))[1] != win_screenpos(0)[1] && winheight(winnr('#'))
       wincmd p
    elseif winnr() == winnr('l')
       wincmd h
@@ -638,8 +638,8 @@ nnoremap <expr> <S-Tab> &foldlevel ? 'zm' : 'zR'
 nnoremap <C-J> <C-W>w
 nnoremap <C-K> <C-W>W
 
-nnoremap <A-j> <Cmd>normal <C-W>w<CR>
-nnoremap <A-k> <Cmd>normal <C-W>W<CR>
+nnoremap <A-j> <C-W>w
+nnoremap <A-k> <C-W>W
 
 " Control+Q just does the same as Control+V by default; use it to close windows.
 nnoremap <C-Q> <Cmd>x<CR>
@@ -767,8 +767,9 @@ nnoremap <silent> <Space>C :Git commit --amend<CR>
 nnoremap U <Cmd>Windows<CR>
 nnoremap <Space>f <Cmd>Files<CR>
 nnoremap <Space>F <Cmd>Files ~/projects<CR>
+nnoremap <Space>j <Cmd>GF<CR>
 nnoremap <Space>l <Cmd>Buffers<CR>
-nnoremap <silent> <Space>a :Rg \b<C-R><C-W>\b<CR>
+nnoremap <silent> <Space>a :<C-R><C-W>\b<Home>Rg \b<CR>
 nnoremap <silent> <Space>A :RG <C-R><C-W><CR>
 nnoremap <Space>r <Cmd>Rg<CR>
 nnoremap <Space>R <Cmd>RG<CR>
@@ -797,6 +798,8 @@ nnoremap <silent> <Space>U :Gwrite<CR>
 
 nnoremap <silent> <C-S> :<C-U>silent update \| echo<CR>
 inoremap <silent> <C-S> <Esc>:silent update \| echo<CR>
+
+inoremap <Tab> <Right><Esc>
 
 " Remap <CR>
 " nnoremap <CR> to stop 'hlsearch' highlighting and clear any message displayed on the
@@ -959,7 +962,6 @@ function! s:RecollapsePreviousWindow()
 endfunction
 autocmd vimrc_common WinEnter * call s:RecollapsePreviousWindow()
 
-inoremap <Tab> <Esc>
 inoremap <Nul> <C-X><C-O>
 
 " Do something with Alt.  Maybe just having some normal mode commands in insert mode would
@@ -1039,7 +1041,7 @@ function! s:RotateToEdge()
       endwhile
    endif
 endfunction
-nnoremap <silent> <A-r> :<C-U>silent! call <SID>RotateToEdge()<CR>
+nnoremap <A-r> <Cmd>silent! call <SID>RotateToEdge()<CR>
 
 function! s:Split() abort
    if winnr('$') == 1 && &tw != 0 && &tw <= 90 && &columns >= 195 | vs | else | sp | endif
@@ -1049,6 +1051,8 @@ nnoremap <silent> _ :call <SID>Split()<CR>
 nnoremap <silent> <C-_> :call <SID>Split()<CR>
 
 command! Mail new | set ft=mail
+
+let loaded_matchparen = 1
 
 " This makes it so that delimitMate is loaded before vim-endwise, because it doesn't work
 " otherwise.  The loading order used to work out by default, but it changed when I grouped
